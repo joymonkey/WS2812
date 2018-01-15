@@ -21,19 +21,18 @@
 */
 
 // Timing in ns
-#ifdef SK6812_TIMING
   //SK6812 LEDs can run using WS2812 timing, but can also be run much faster.
   //Tailoring their timing here lowers the time that interrupts are disabled, and (for example) 
   //improves reliability of reading serial data on an ATmega328P based Arduino.
   #define w_zeropulse   17
   #define w_onepulse    283
   #define w_totalperiod 300
-#else
+/*
   //default WS2812 timing...
   #define w_zeropulse   350
   #define w_onepulse    900
   #define w_totalperiod 1250
-#endif
+*/
 
 // Fixed cycles used by the inner loop
 #define w_fixedlow    3
